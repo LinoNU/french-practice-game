@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Trophy, RotateCcw, Check, X } from 'lucide-react';
+const { useState } = React;
+const { Trophy, RotateCcw, Check, X } = lucide;
 
 const FrenchPracticeGame = () => {
   const [gameMode, setGameMode] = useState(null);
@@ -51,8 +51,6 @@ const FrenchPracticeGame = () => {
     21: 'vingt et un', 30: 'trente', 40: 'quarante', 50: 'cinquante',
     60: 'soixante', 70: 'soixante-dix', 80: 'quatre-vingts', 90: 'quatre-vingt-dix', 100: 'cent'
   };
-
-
 
   const generateNumberWord = (num) => {
     if (numberWords[num]) return numberWords[num];
@@ -260,68 +258,4 @@ const FrenchPracticeGame = () => {
                   />
                   
                   <button
-                    onClick={() => checkAnswer(userAnswer)}
-                    disabled={!userAnswer.trim() || feedback !== null}
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-4 rounded-2xl text-2xl font-bold disabled:opacity-50 disabled:cursor-not-allowed transition"
-                  >
-                    Check Answer
-                  </button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {options.map((option, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => checkAnswer(option)}
-                      disabled={feedback !== null}
-                      className="bg-white border-4 border-gray-300 hover:border-blue-500 hover:bg-blue-50 p-6 rounded-2xl text-xl font-semibold transition disabled:cursor-not-allowed"
-                    >
-                      {option}
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              {feedback && (
-                <div className={`text-center p-6 rounded-2xl text-2xl font-bold ${
-                  feedback === 'correct' 
-                    ? 'bg-green-100 text-green-700' 
-                    : 'bg-red-100 text-red-700'
-                }`}>
-                  {feedback === 'correct' ? (
-                    <div className="flex items-center justify-center gap-3">
-                      <Check className="w-8 h-8" />
-                      <span>Excellent! 🎉</span>
-                    </div>
-                  ) : (
-                    <div>
-                      <div className="flex items-center justify-center gap-3 mb-2">
-                        <X className="w-8 h-8" />
-                        <span>Not quite!</span>
-                      </div>
-                      <div className="text-lg">
-                        The correct answer is: <strong>{currentQuestion.correctAnswer}</strong>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-        
-        {totalQuestions >= 5 && (
-          <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-            <p className="text-xl text-gray-700">
-              Accuracy: <strong className="text-2xl text-blue-600">
-                {Math.round((score / totalQuestions) * 100)}%
-              </strong>
-            </p>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default FrenchPracticeGame;
+                    onClick={() => checkAnswer(userAnswe
