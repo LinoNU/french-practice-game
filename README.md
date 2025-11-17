@@ -6,4 +6,4 @@ An interactive game to practice French vocabulary including:
 - Months
 - Numbers 0-100
 
-**Play the game:** https://[your-username].github.io/french-practice-game/
+**Play the game:** https://linoNU.github.io/french-practice-game/
