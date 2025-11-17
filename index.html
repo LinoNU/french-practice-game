@@ -8,14 +8,12 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <div id="root"></div>
     
     <script type="text/babel">
         const { useState } = React;
-        const { Trophy, RotateCcw, Check, X } = lucide;
 
         const FrenchPracticeGame = () => {
           const [gameMode, setGameMode] = useState(null);
@@ -239,15 +237,15 @@
                     
                     <div className="flex items-center gap-6">
                       <div className="flex items-center gap-2 text-2xl font-bold text-green-600">
-                        <Trophy className="w-8 h-8" />
-                        {score}/{totalQuestions}
+                        <span>🏆</span>
+                        <span>{score}/{totalQuestions}</span>
                       </div>
                       
                       <button
                         onClick={resetGame}
-                        className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full transition"
+                        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-full transition text-xl"
                       >
-                        <RotateCcw className="w-6 h-6" />
+                        ↻
                       </button>
                     </div>
                   </div>
@@ -304,13 +302,13 @@
                         }`}>
                           {feedback === 'correct' ? (
                             <div className="flex items-center justify-center gap-3">
-                              <Check className="w-8 h-8" />
+                              <span className="text-3xl">✓</span>
                               <span>Excellent! 🎉</span>
                             </div>
                           ) : (
                             <div>
                               <div className="flex items-center justify-center gap-3 mb-2">
-                                <X className="w-8 h-8" />
+                                <span className="text-3xl">✗</span>
                                 <span>Not quite!</span>
                               </div>
                               <div className="text-lg">
